@@ -9,7 +9,7 @@ const calculator =  function calculator(){
   }
   function divide(x, y) {
     if(y === 0){
-      return 'Cannot divide by 0'
+      return 'ERROR! Cannot divide by 0'
     }
     return x / y;
   }
@@ -21,6 +21,8 @@ const calculator =  function calculator(){
 }
 
 function operate (operator, value1, value2) {
+  value1 = checkNumber(value1);
+  value2 = checkNumber(value2);
   if(operator === 'add'){
     return calculator().add(value1, value2);
   } else if (operator === 'sub'){
@@ -49,7 +51,7 @@ function getValue(value) {
   } else if (isNaN(value) === false && temp !== '' && op === '') {
     temp += value;
     text.value = temp;
-  } else if (isNaN(value) === true && value !== 'clear' && op === '') {
+  } else if (isNaN(value) === true && value !== 'clear' && value !== 'dec' && op === '') {
     op = value;
   } else if (isNaN(value) === false && op !== '' && temp2 === ''){
     temp2 = value;
@@ -57,17 +59,20 @@ function getValue(value) {
   } else if (isNaN(value) === false && op !== '' && temp2 !== ''){
     temp2 += value;
     text.value = temp2;
-  } else if (isNaN(value) === true && temp !== '' & temp2 !== ''){
-    temp = operate(op, parseInt(temp), parseInt(temp2));
+  } else if (isNaN(value) === true && temp !== '' & temp2 !== '' && value !== 'clear' && value !== 'dec'){
+    temp = operate(op, temp, temp2);
+    temp2 = '';
     text.value = temp;
   } else if (isNaN(value) === true && value === 'dec' && op === '') {
-    temp = value;
+    temp += '.';
     text.value = temp;
   } else if (isNaN(value) === true && value === 'dec' && op !== '') {
-    temp2 = value;
+    temp2 += '.';
     text.value = temp2;
   } else if (isNaN(value) === true && value === 'clear') {
     clear();
+  } else if (isNaN(value) === true && value !== 'clear'  && value !== 'dec' && op !== '') {
+    op = value;
   }
 }
 
@@ -76,4 +81,12 @@ function clear() {
   temp2 = '';
   op = '';
   text.value = '0';
+}
+
+function checkNumber(number) {
+  if(/^\d+\.\d+$/.test(number)){
+    return number = parseFloat(number);
+  } else {
+    return number = parseInt(number);
+  }
 }
