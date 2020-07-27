@@ -52,12 +52,12 @@ function getValue(value) {
     op = '';
     temp = '';
     temp2 = '';
-  } else if (isNaN(value) === true && value !== 'clear' && value !== 'dec' && op === '') {
+  } else if (isNaN(value) === true && value !== 'clear' && value !== 'dec' && op === '' && value !== 'back') {
     op = value;
   } else if (isNaN(value) === false && op !== ''){
     temp2 += value;
     text.value = temp2;
-  } else if (isNaN(value) === true && temp !== '' & temp2 !== '' && value !== 'clear' && value !== 'dec'){
+  } else if (isNaN(value) === true && temp !== '' & temp2 !== '' && value !== 'clear' && value !== 'dec' && value !== 'back'){
     temp = operate(op, temp, temp2);
     temp2 = '';
     text.value = temp;
@@ -69,8 +69,14 @@ function getValue(value) {
     text.value = temp2;
   } else if (isNaN(value) === true && value === 'clear') {
     clear();
-  } else if (isNaN(value) === true && value !== 'clear'  && value !== 'dec' && op !== '') {
+  } else if (isNaN(value) === true && value !== 'clear'  && value !== 'dec' && value !== 'back' && op !== '') {
     op = value;
+  } else if (isNaN(value) === true && value === 'back' && op === '') {
+    temp = text.value.slice(0, -1);
+    text.value = temp;
+  } else if (isNaN(value) === true && value === 'back' && op !== '') {
+    temp2 = text.value.slice(0, -1);
+    text.value = temp2;
   }
 }
 
@@ -106,10 +112,11 @@ const btnMultiply = document.getElementById('mult');
 const btnSubtract = document.getElementById('sub');
 const btnAdd = document.getElementById('add');
 const btnClear = document.getElementById('clear');
-const btnBack = document.getElementById('clear');
+const btnBack = document.getElementById('back');
 
 
 document.addEventListener("keypress", e => {
+  console.log(e.key);
   switch (e.key) {
     case '1':
         btn1.click();
