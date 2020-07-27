@@ -63,10 +63,10 @@ function getValue(value) {
     temp = operate(op, temp, temp2);
     temp2 = '';
     text.value = temp;
-  } else if (isNaN(value) === true && value === 'dec' && op === '') {
+  } else if (isNaN(value) === true && value === 'dec' && op === '' && !temp.includes('.')) {
     temp += '.';
     text.value = temp;
-  } else if (isNaN(value) === true && value === 'dec' && op !== '') {
+  } else if (isNaN(value) === true && value === 'dec' && op !== '' && !temp2.includes('.')) {
     temp2 += '.';
     text.value = temp2;
   } else if (isNaN(value) === true && value === 'clear') {
