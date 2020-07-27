@@ -48,6 +48,10 @@ function getValue(value) {
   if(isNaN(value) === false && op === '') {
     temp += value;
     text.value = temp;
+  } else if (isNaN(value) === true && temp === '' && temp2 === '') {
+    op = '';
+    temp = '';
+    temp2 = '';
   } else if (isNaN(value) === true && value !== 'clear' && value !== 'dec' && op === '') {
     op = value;
   } else if (isNaN(value) === false && op !== ''){
@@ -102,6 +106,7 @@ const btnMultiply = document.getElementById('mult');
 const btnSubtract = document.getElementById('sub');
 const btnAdd = document.getElementById('add');
 const btnClear = document.getElementById('clear');
+const btnBack = document.getElementById('clear');
 
 
 document.addEventListener("keypress", e => {
@@ -159,6 +164,9 @@ document.addEventListener("keypress", e => {
       break;
     case 'Enter':
       btnEqual.click();
+      break;
+    case 'Backspace':
+      btnBack.click();
       break;
   }
 });
