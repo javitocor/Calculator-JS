@@ -116,7 +116,6 @@ const btnBack = document.getElementById('back');
 
 
 document.addEventListener("keypress", e => {
-  console.log(e.key);
   switch (e.key) {
     case '1':
         btn1.click();
