@@ -1,0 +1,22 @@
+input[type="button"] {
+  background-color: green;
+  color: black;
+  border: solid black 2px;
+  width: 100%;
+  padding: 25px;
+}
+
+input[type="text"] {
+  background-color: white;
+  border: solid black 2px;
+  width: 100%;
+  padding: 25px;
+}
+
+table {
+  height: 450px;
+}
+
+#calc {
+  font-size: x-large;
+}
