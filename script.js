@@ -45,18 +45,12 @@ let op = '';
 const text = document.querySelector('input[type="text"]');
 
 function getValue(value) {
-  if(isNaN(value) === false && temp === '' && op === '') {
-    temp = value;
-    text.value = temp;
-  } else if (isNaN(value) === false && temp !== '' && op === '') {
+  if(isNaN(value) === false && op === '') {
     temp += value;
     text.value = temp;
   } else if (isNaN(value) === true && value !== 'clear' && value !== 'dec' && op === '') {
     op = value;
-  } else if (isNaN(value) === false && op !== '' && temp2 === ''){
-    temp2 = value;
-    text.value = temp2;
-  } else if (isNaN(value) === false && op !== '' && temp2 !== ''){
+  } else if (isNaN(value) === false && op !== ''){
     temp2 += value;
     text.value = temp2;
   } else if (isNaN(value) === true && temp !== '' & temp2 !== '' && value !== 'clear' && value !== 'dec'){
@@ -89,4 +83,82 @@ function checkNumber(number) {
   } else {
     return number = parseInt(number);
   }
-}
+};
+
+const btn1 = document.getElementById('1');
+const btn2 = document.getElementById('2');
+const btn3 = document.getElementById('3');
+const btn4 = document.getElementById('4');
+const btn5 = document.getElementById('5');
+const btn6 = document.getElementById('6');
+const btn7 = document.getElementById('7');
+const btn8 = document.getElementById('8');
+const btn9 = document.getElementById('9');
+const btn0 = document.getElementById('0');
+const btnDecimal = document.getElementById('dec');
+const btnEqual = document.getElementById('equal');
+const btnDivide = document.getElementById('div');
+const btnMultiply = document.getElementById('mult');
+const btnSubtract = document.getElementById('sub');
+const btnAdd = document.getElementById('add');
+const btnClear = document.getElementById('clear');
+
+
+document.addEventListener("keypress", e => {
+  switch (e.key) {
+    case '1':
+        btn1.click();
+        break;
+    case '2':
+        btn2.click();
+        break;
+    case '3':
+        btn3.click();
+        break;
+    case '4':
+        btn4.click();
+        break;
+    case '5':
+        btn5.click();
+        break;
+    case '6':
+        btn6.click();
+        break;
+    case '7':
+        btn7.click();
+        break;
+    case '8':
+        btn8.click();
+        break;
+    case '9':
+        btn9.click();
+        break;
+    case '0':
+        btn0.click();
+        break;
+    case '.':
+        btnDecimal.click();
+        break;
+    case '=':
+        btnEqual.click();
+        break;
+    case '/':
+        btnDivide.click();
+        break;
+    case '*':
+        btnMultiply.click();
+        break;
+    case '-':
+        btnSubtract.click();
+        break;
+    case '+':
+        btnAdd.click();
+        break;
+    case 'c':
+      btnClear.click();
+      break;
+    case 'Enter':
+      btnEqual.click();
+      break;
+  }
+});
