@@ -39,7 +39,11 @@ Additional description about the project and its features.
 
 ## Instrucions
 
-- 
+- Add first number clicking on
+- Click operator
+- Add second number clicking on
+- Click '=' to see the result
+- Press 'C' to reset the values
 
 ## Live Demo
 
