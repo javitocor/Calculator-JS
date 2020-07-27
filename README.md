@@ -56,10 +56,6 @@ Additional description about the project and its features.
 
 - A modern browser, up to date.  :muscle:
 
-## Future Features
-
-- Add keyboard support 
-
 ## Author
 
 👤 Javier Oriol Correas Sanchez Cuesta
