@@ -6,6 +6,10 @@ input[type="button"] {
   padding: 25px;
 }
 
+#add, #sub, #mult, #div, #equal, #dec, #clear {
+  background-color: rgb(36, 202, 36);
+}
+
 input[type="text"] {
   background-color: white;
   border: solid black 2px;

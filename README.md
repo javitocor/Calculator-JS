@@ -60,7 +60,7 @@ Additional description about the project and its features.
 
 - Add keyboard support 
 
-## Authors
+## Author
 
 👤 Javier Oriol Correas Sanchez Cuesta
 - Github: [@javitocor](https://github.com/javitocor)
